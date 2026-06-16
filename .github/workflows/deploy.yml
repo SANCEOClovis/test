@@ -1,0 +1,33 @@
+name: Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branche'
+        required: true
+        default: 'develop'
+
+      environment:
+        description: 'Environnement'
+        required: true
+        type: choice
+        options:
+          - dev1
+          - dev2
+          - recette
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch }}
+
+      - name: Afficher
+        run: |
+          echo "Branch : ${{ inputs.branch }}"
+          echo "Env : ${{ inputs.environment }}"
