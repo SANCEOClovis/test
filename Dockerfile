@@ -7,7 +7,7 @@ RUN npm ci
 
 COPY . .
 
-RUN npm run build
+RUN npm run build && ls -R dist
 
 FROM nginx:alpine
 
