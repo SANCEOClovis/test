@@ -45,14 +45,14 @@ jobs:
           push: true
           tags: ghcr.io/sanceoclovis/frontend-angular:${{ inputs.environment }}
 
-      # - name: Deploy DEV1
-      #   if: inputs.environment == 'dev1'
-      #   run: curl -X POST "${{ secrets.RENDER_DEV1_HOOK }}"
+      - name: Deploy DEV1
+        if: inputs.environment == 'dev1'
+        run: curl -X POST "${{ secrets.RENDER_DEV1_HOOK }}"
 
-      # - name: Deploy DEV2
-      #   if: inputs.environment == 'dev2'
-      #   run: curl -X POST "${{ secrets.RENDER_DEV2_HOOK }}"
+      - name: Deploy DEV2
+        if: inputs.environment == 'dev2'
+        run: curl -X POST "${{ secrets.RENDER_DEV2_HOOK }}"
 
-      # - name: Deploy RECETTE
-      #   if: inputs.environment == 'recette'
-      #   run: curl -X POST "${{ secrets.RENDER_RECETTE_HOOK }}"
+      - name: Deploy RECETTE
+        if: inputs.environment == 'recette'
+        run: curl -X POST "${{ secrets.RENDER_RECETTE_HOOK }}"
