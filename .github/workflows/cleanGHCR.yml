@@ -1,0 +1,21 @@
+name: Cleanup GHCR
+
+on:
+  schedule:
+    - cron: '0 3 * * *' # tous les jours à 3h
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+
+    permissions:
+      packages: write
+
+    steps:
+      - name: Delete old images
+        uses: dataaxiom/ghcr-cleanup-action@v1
+        with:
+          package-name: frontend-angular
+          token: ${{ secrets.GITHUB_TOKEN }}
+          keep-n-tagged: 5
+          delete-untagged: true
