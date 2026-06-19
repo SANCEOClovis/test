@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -6,11 +6,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class TestService {
-  private apiUrl = 'https://backend-api-production-e8c0.up.railway.app/test';
+  private readonly apiUrl = 'https://backend-api-production-e8c0.up.railway.app/test';
 
-  constructor(private http: HttpClient) {}
+  private readonly http = inject(HttpClient);
 
-  getData(): Observable<any> {
-    return this.http.get<any>(this.apiUrl, { responseType: 'text' as 'json' });
+  getData(): Observable<unknown> {
+    return this.http.get<unknown>(this.apiUrl, { responseType: 'text' as 'json' });
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TestService } from './test.service';
 
 @Component({
@@ -15,7 +15,7 @@ import { TestService } from './test.service';
 export class App {
   data = '';
 
-  constructor(private testService: TestService) {}
+  private readonly testService: TestService = inject(TestService);
 
   getTest() {
     console.log('Appel de la méthode getTest()');
