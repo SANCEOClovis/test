@@ -1,6 +1,7 @@
 name: Cleanup GHCR
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '25 13 * * *' # tous les jours à 15h25
 
