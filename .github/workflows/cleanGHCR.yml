@@ -3,13 +3,14 @@ name: Cleanup GHCR
 on:
   workflow_dispatch:
   schedule:
-    - cron: '27 13 * * *' # tous les jours à 15h25
+    - cron: '30 13 * * *' # tous les jours à 15h25
 
 jobs:
   cleanup:
     runs-on: ubuntu-latest
 
     permissions:
+      contents: read
       packages: write
 
     steps:
