@@ -1,4 +1,4 @@
-name: Validation
+name: Code Validation
 
 on:
   pull_request:
@@ -21,6 +21,9 @@ jobs:
         with:
           node-version: 22
 
-      - run: npm ci
-      - run: npm run lint
-      - run: npm run build
+      - name: Install NPM dependencies
+        run: npm ci
+      - name: Run lint check
+        run: npm run lint
+      - name: Build project
+        run: npm run build
