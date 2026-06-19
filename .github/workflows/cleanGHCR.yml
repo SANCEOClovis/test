@@ -17,7 +17,7 @@ jobs:
       - name: Delete old images
         uses: dataaxiom/ghcr-cleanup-action@v1
         with:
-          package-name: frontend-angular
+          package: frontend-angular
           token: ${{ secrets.GITHUB_TOKEN }}
           keep-n-tagged: 5
           delete-untagged: true
