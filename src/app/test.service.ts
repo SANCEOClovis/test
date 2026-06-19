@@ -10,7 +10,7 @@ export class TestService {
 
   private readonly http = inject(HttpClient);
 
-  getData(): Observable<unknown> {
-    return this.http.get<unknown>(this.apiUrl, { responseType: 'text' as 'json' });
+  getData(): Observable<string> {
+    return this.http.get<string>(this.apiUrl, { responseType: 'text' as 'json' });
   }
 }
