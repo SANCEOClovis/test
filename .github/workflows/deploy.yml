@@ -3,11 +3,6 @@ name: Deploy
 on:
   workflow_dispatch:
     inputs:
-      branch:
-        description: 'Branche'
-        required: true
-        default: 'develop'
-
       environment:
         description: 'Environnement'
         required: true

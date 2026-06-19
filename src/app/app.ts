@@ -9,6 +9,7 @@ import { TestService } from './test.service';
     <p>Le front fonctionne correctement.</p>
     <button (click)="getTest()">Get Data</button>
     <div>{{ data }}</div>
+    <p>Le back fonctionne correctement.</p>
   `,
   styles: [],
 })
