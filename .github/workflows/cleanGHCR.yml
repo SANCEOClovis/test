@@ -2,7 +2,7 @@ name: Cleanup GHCR
 
 on:
   schedule:
-    - cron: '22 15 * * *' # tous les jours à 15h25
+    - cron: '25 13 * * *' # tous les jours à 15h25
 
 jobs:
   cleanup:
