@@ -17,6 +17,7 @@ jobs:
     uses: ./.github/workflows/validation.yml
 
   deploy:
+    needs: ci
     runs-on: ubuntu-latest
 
     permissions:
